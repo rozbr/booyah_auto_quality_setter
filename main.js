@@ -13,7 +13,7 @@ function get_quality() {
     : null;
 }
 
-function set_quality(target_quality='144p') {
+function set_quality(target_quality) {
   resolution_field = get_resolution_field();
 
   if (!resolution_field) return null;
@@ -36,15 +36,15 @@ function set_quality(target_quality='144p') {
   }
 }
 
-function check_quality(target_quality='144p') {
+function check_and_set_quality(target_quality) {
   quality = get_quality();
 
   if (quality != target_quality)
     set_quality(target_quality);
 }
 
-function main() {
+function start_auto_quality_setter(target_quality='144p') {
   setInterval(() => {
-    check_quality('144p');
+    check_and_set_quality(target_quality);
   }, 1000);
 }
