@@ -43,7 +43,7 @@ function check_quality(target_quality='144p') {
     set_quality(target_quality);
 }
 
-export function main() {
+function main() {
   setInterval(() => {
     check_quality('144p');
   }, 1000);
